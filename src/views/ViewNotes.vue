@@ -45,7 +45,7 @@
 
 <script setup>
 /* imports */
-import { ref, watch } from 'vue';
+import { ref, watch, onMounted } from 'vue';
 import Note from '@/components/Notes/Note.vue'
 import AddEditNote from '@/components/Notes/AddEditNote.vue'
 import { useStoreNotes } from '@/stores/storeNotes.js'
@@ -71,5 +71,12 @@ const addNote = () => {
 
 /* watcher character length */
 useWatchCharacters(newNote)
+
+
+/* On mounted  hook*/
+
+onMounted(()=>{
+  storeNotes.getNote()
+})
 
 </script>

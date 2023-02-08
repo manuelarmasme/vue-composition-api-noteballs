@@ -7,17 +7,17 @@
 <script setup>
 /* imports */
 import Navbar from '@/components/Layout/Navbar.vue';
-import { useStoreNotes } from '@/stores/storeNotes';
+import { useStoreAuth } from '@/stores/storeAuth';
 import { onMounted } from 'vue';
 
 /* Store */
 
-const storeNotes = useStoreNotes()
+const storeAuth = useStoreAuth()
 
 /* On mounted  hook*/
 
 onMounted(()=>{
-  storeNotes.getNote()
+  storeAuth.init()
 })
 
 </script>
